@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Функции all() и any() в Julia</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #f7f7f7;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    code {
+      background: #eee;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Функции all() и any() в Julia</h1>
+
+    <h2>Функция all()</h2>
+    <p>Функция <code>all()</code> проверяет, выполняется ли условие для <b>всех</b> элементов коллекции.</p>
+    <pre><code>all(x -> x > 0, [1, 2, 3])  # true
+all(x -> x > 0, [1, -2, 3]) # false</code></pre>
+
+    <h2>Функция any()</h2>
+    <p>Функция <code>any()</code> проверяет, выполняется ли условие хотя бы для <b>одного</b> элемента.</p>
+    <pre><code>any(x -> x > 0, [-1, -2, 3]) # true
+any(x -> x > 0, [-1, -2, -3]) # false</code></pre>
+
+    <h2>Сравнение</h2>
+    <ul>
+      <li><code>all()</code> — все элементы должны удовлетворять условию</li>
+      <li><code>any()</code> — достаточно одного элемента</li>
+    </ul>
+
+    <h2>Пример</h2>
+    <pre><code>nums = [2, 4, 6]
+println(all(x -> x % 2 == 0, nums)) # true
+println(any(x -> x % 2 == 0, nums)) # true</code></pre>
+
+  </div>
+</body>
+</html>
